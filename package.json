@@ -69,6 +69,6 @@
     "rimraf": "3.0.2"
   },
   "peerDependencies": {
-    "domhandler": "^5.0.3"
+    "domhandler": "5.0.3"
   }
 }
