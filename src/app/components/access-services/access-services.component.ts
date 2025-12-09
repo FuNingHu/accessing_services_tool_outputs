@@ -196,7 +196,7 @@ export class AccessServicesComponent implements ApplicationPresenter, OnChanges,
         if (signal && signal.type === 'signal_analog_domain') {
             return signal.value as string;
         }
-        return 'CURRENT'; // default domain
+        return 'VOLTAGE'; // default domain
     }
 
     getBooleanValue(value: boolean | number | string): boolean {

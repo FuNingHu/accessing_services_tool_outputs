@@ -17,7 +17,7 @@
     "clean:dist": "rimraf ./dist",
     "clean:target": "rimraf ./target",
     "generatepath": "generate-manifest-constants ./manifest.yaml",
-    "install-urcap": "install-urcap 'target/accessing-services*.urcapx' '../../manifest-spec-19.6.12.json'",
+    "install-urcap": "install-urcap 'target/accessing-services*.urcapx' '../manifest-spec-19.6.12.json'",
     "delete-urcap": "delete-urcap urcaps-r-us accessing-services"
   },
   "private": true,
