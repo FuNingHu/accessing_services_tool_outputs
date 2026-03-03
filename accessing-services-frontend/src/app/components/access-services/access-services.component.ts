@@ -1,7 +1,14 @@
 import { TranslateService } from '@ngx-translate/core';
 import { first, take } from 'rxjs/operators';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, SimpleChanges, signal, computed } from '@angular/core';
-import { ApplicationPresenterAPI, ApplicationPresenter, RobotSettings, PayloadLimits, Signal, SignalBooleanValue, SignalEvent, SignalFloatValue, SignalAnalogDomain, SignalValueTypeEnum } from '@universal-robots/contribution-api';
+import { ApplicationPresenterAPI, 
+    ApplicationPresenter, 
+    RobotSettings, 
+    SignalBooleanValue, 
+    SignalEvent, 
+    SignalFloatValue, 
+    SignalAnalogDomain, 
+    ScriptBuilder } from '@universal-robots/contribution-api';
 import { AccessServicesNode } from './access-services.node';
 import { Subscription } from 'rxjs';
 
@@ -94,7 +101,6 @@ export class AccessServicesComponent implements ApplicationPresenter, OnChanges,
             // Start signal tracking when applicationAPI becomes available
             this.startSignalTracking();
             console.log('Started signal tracking');
-            
         }
     }
 

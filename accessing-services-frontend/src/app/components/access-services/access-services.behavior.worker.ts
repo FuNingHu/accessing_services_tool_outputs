@@ -13,7 +13,6 @@ import {
     StopBitsEnum,
     SignalAnalogDomainValueEnum,
     PowerOutputEnum,
-    Voltage
 } from '@universal-robots/contribution-api';
 import { AccessServicesNode } from './access-services.node';
 
@@ -28,17 +27,6 @@ const generatePreambleScriptCode = (node: AccessServicesNode): OptionalPromise<S
     const builder = new ScriptBuilder();
     return builder;
 };
-
-// upgradeNode is optional
-const upgradeApplicationNode
-  = (loadedNode: ApplicationNode, defaultNode: AccessServicesNode): AccessServicesNode =>
-      defaultNode;
-
-// downgradeNode is optional
-const downgradeApplicationNode
-  = (loadedNode: ApplicationNode, defaultNode: AccessServicesNode): AccessServicesNode =>
-      defaultNode;
-
 // Define tool controller ID constants to ensure consistency across usage
 const TOOL_CONTROLLER_12V = 'accessing-services-12v';
 const TOOL_CONTROLLER_24V = 'accessing-services-24v';
