@@ -2,17 +2,14 @@
 
 # compiled output
 /dist
-**/dist
 /tmp
 /out-tsc
 /target
-**/target
 # Only exists if Bazel was run
 /bazel-out
 
 # dependencies
 /node_modules
-**/node_modules
 /npm
 /node
 
@@ -39,7 +36,6 @@ speed-measure-plugin*.json
 
 # misc
 /.angular/cache
-**/.angular
 /.sass-cache
 /connect.lock
 /coverage
