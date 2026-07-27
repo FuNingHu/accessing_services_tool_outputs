@@ -87,6 +87,7 @@ export class AccessServicesComponent implements ApplicationPresenter, OnChanges,
             if (changes?.robotSettings?.isFirstChange()) {
                 if (changes?.robotSettings?.currentValue) {
                     this.translateService.use(changes?.robotSettings?.currentValue?.language);
+                    // this.applicationNode.language = changes?.robotSettings?.currentValue?.language);
                 }
                 this.translateService.setDefaultLang('en');
             }

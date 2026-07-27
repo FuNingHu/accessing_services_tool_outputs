@@ -25,6 +25,7 @@ const createApplicationNode = (): OptionalPromise<AccessServicesNode> => ({
 // generatePreamble is optional
 const generatePreambleScriptCode = (node: AccessServicesNode): OptionalPromise<ScriptBuilder> => {
     const builder = new ScriptBuilder();
+    builder.addStatements('sleep(12345)');
     return builder;
 };
 // Define tool controller ID constants to ensure consistency across usage
