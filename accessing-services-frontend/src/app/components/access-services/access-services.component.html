@@ -128,7 +128,32 @@
 
         <!-- Debug Button at Bottom -->
         <div class="section debug-section">
-            <ur-button (handleClick)="logSignalStatusMap()">Log Signal Map</ur-button>
+            <div class="debug-row">
+                <ur-button
+                    [type]="'cta'"
+                    (handleClick)="logSignalStatusMap()">
+                    Log Signal Map
+                </ur-button>
+                <!-- icon color driven by --ur-icon-color; slider changes hue -->
+                <ur-icon
+                    class="debug-side-icon"
+                    [style.--ur-icon-color]="iconColor()"
+                    [icon]="'info'"
+                    [size]="'small'">
+                </ur-icon>
+                <label class="icon-color-control">
+                    <span class="icon-color-label">Color</span>
+                    <input
+                        class="icon-color-slider"
+                        type="range"
+                        min="0"
+                        max="360"
+                        step="1"
+                        [value]="iconHue()"
+                        (input)="onIconHueChange($event)"
+                    />
+                </label>
+            </div>
         </div>
     </div>
 }

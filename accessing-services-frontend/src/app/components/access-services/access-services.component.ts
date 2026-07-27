@@ -70,12 +70,22 @@ export class AccessServicesComponent implements ApplicationPresenter, OnChanges,
     // Signal for tracking connection status
     isTrackingSignals = signal<boolean>(false);
 
+    // Hue (0–360) for the debug icon color; drag the slider to change it
+    iconHue = signal(30);
+    iconColor = computed(() => `hsl(${this.iconHue()}, 85%, 45%)`);
+
     private sourceUpdatesSubscription?: Subscription
 
     constructor(
         protected readonly translateService: TranslateService,
         protected readonly cd: ChangeDetectorRef
     ) {}
+
+    onIconHueChange(event: Event): void {
+        const value = Number((event.target as HTMLInputElement).value);
+        this.iconHue.set(Number.isFinite(value) ? value : 0);
+        this.cd.detectChanges();
+    }
 
 
     ngOnChanges(changes: SimpleChanges): void {
@@ -87,7 +97,6 @@ export class AccessServicesComponent implements ApplicationPresenter, OnChanges,
             if (changes?.robotSettings?.isFirstChange()) {
                 if (changes?.robotSettings?.currentValue) {
                     this.translateService.use(changes?.robotSettings?.currentValue?.language);
-                    // this.applicationNode.language = changes?.robotSettings?.currentValue?.language);
                 }
                 this.translateService.setDefaultLang('en');
             }

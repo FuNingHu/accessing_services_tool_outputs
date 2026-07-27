@@ -67,4 +67,55 @@
   padding-top: 1rem;
   text-align: center;
 
+  .debug-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  // ur-icon fill comes from --ur-icon-color (bound from iconColor() in TS)
+  .debug-side-icon {
+    flex-shrink: 0;
+  }
+
+  .icon-color-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .icon-color-label {
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+
+  .icon-color-slider {
+    width: 140px;
+    cursor: pointer;
+    accent-color: #666;
+    // rainbow track hints that this slider sweeps hue
+    background: linear-gradient(
+      to right,
+      hsl(0, 85%, 45%),
+      hsl(60, 85%, 45%),
+      hsl(120, 85%, 45%),
+      hsl(180, 85%, 45%),
+      hsl(240, 85%, 45%),
+      hsl(300, 85%, 45%),
+      hsl(360, 85%, 45%)
+    );
+    border-radius: 4px;
+    height: 6px;
+    appearance: none;
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #888;
+      cursor: pointer;
+    }
+  }
 }
